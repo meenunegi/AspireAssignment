@@ -23,7 +23,8 @@
 ## Steps to Run the Project 
 
 1. Clone this project  `git clone < project-url.git >`
-2. `npm install`
+2. If not in the Project Folder, navigate to the project folder `cd {Path to the Project Folder}`
+3. `npm install`
 
 ## iOS steps
 
