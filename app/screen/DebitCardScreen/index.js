@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Image, StyleSheet, Text, View, ScrollView} from 'react-native';
+import {Image, StyleSheet, Text, View, ScrollView, Platform} from 'react-native';
 
 import SwipeableComponent from '../../components/Swipeable/SwipeableComponent';
 import AppConstant from '../../components/Constant';
@@ -55,9 +55,8 @@ export default class DebitScreen extends Component {
         </View>
         <ScrollView
           scrollEventThrottle={16}
-          // stickyHeaderIndices={[0]}
-          contentContainerStyle={{paddingBottom: 100}}
-          style={{height: '100%', marginTop: -100, paddingTop: 100}}
+          contentContainerStyle={{paddingBottom: Platform.OS === 'ios' ? 170 :100}}
+          style={{height: '100%', marginTop: -170, paddingTop: 170}}
           allowBounceVertical={true}>
           <SwipeableComponent cardDetails={cardDetails}/>
         </ScrollView>
