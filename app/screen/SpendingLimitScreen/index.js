@@ -1,13 +1,5 @@
 import React, {Component} from 'react';
-import {
-  Image,
-  Animated,
-  StyleSheet,
-  Text,
-  View,
-  ScrollView,
-  Alert,
-} from 'react-native';
+import {Image, StyleSheet, Text, View, ScrollView, Alert} from 'react-native';
 import {connect} from 'react-redux';
 
 import {balanceLimitUpdate} from '../../database/action';
@@ -46,6 +38,7 @@ class SpendingLimitScreen extends Component {
             <Text style={styles.title}>{AppConstant.SPENDING_LIMIT}</Text>
           </View>
           <ScrollView
+            scrollEnabled={false}
             contentContainerStyle={{flex: 1}}
             style={{height: '100%', marginTop: -100, paddingTop: 100}}
             allowBounceVertical={true}>

@@ -38,7 +38,10 @@ const DebitCardComponent = props => {
         <Text style={styles.showCardText}>{showText}</Text>
       </TouchableOpacity>
       <View style={styles.card}>
-        <Image source={require('../../assets/AspireLogo/AspireLogo.png')} style={styles.aspireLogo}/>
+        <Image
+          source={require('../../assets/AspireLogo/AspireLogo.png')}
+          style={styles.aspireLogo}
+        />
         <Text style={styles.name}>{cardHolderName}</Text>
         <Text style={[styles.aspireText, {letterSpacing: 2}]}>{cardNum}</Text>
         <View style={styles.cardCvvContainer}>
@@ -47,7 +50,10 @@ const DebitCardComponent = props => {
             CVV: {cvv}
           </Text>
         </View>
-        <Image source={require('../../assets/VisaLogo/VisaLogo.png')} style={styles.visaLogo}/>
+        <Image
+          source={require('../../assets/VisaLogo/VisaLogo.png')}
+          style={styles.visaLogo}
+        />
       </View>
     </View>
   );

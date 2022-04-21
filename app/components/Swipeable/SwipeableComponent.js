@@ -17,7 +17,9 @@ const SwipeableComponent = props => {
       <DebitCardComponent cardDetails={props.cardDetails} />
       <View style={{top: '-8%'}}>
         <View style={styles.rowContent}>
-          <Text style={styles.debitCardLimitText}>{AppConstant.DEBIT_CARD_LIMIT}</Text>
+          <Text style={styles.debitCardLimitText}>
+            {AppConstant.DEBIT_CARD_LIMIT}
+          </Text>
           <View style={{flexDirection: 'row'}}>
             <Text style={{color: '#01D167'}}>$345</Text>
             <Text style={{color: '#22222233', marginHorizontal: 10}}>|</Text>
