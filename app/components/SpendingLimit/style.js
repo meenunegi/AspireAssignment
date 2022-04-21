@@ -61,7 +61,7 @@ export const spendingLimitStyle = {
     backgroundColor: '#01D167',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: Platform.OS === 'ios' ? '80%' : '70%',
+    marginTop: Platform.OS === 'ios' ? '100%' : '80%',
     borderRadius: 30,
   },
   btnText: {

@@ -36,25 +36,25 @@ class SpendingLimitScreen extends Component {
   render() {
     const {balanceLimitValue} = this.props;
     return (
-      <View style={styles.mainContainer}>
-        <View style={styles.innerContainer}>
-          <Image
-            source={require('../../assets/Logo/Logo.png')}
-            style={styles.imageContainer}
-          />
-          <Text style={styles.title}>{AppConstant.SPENDING_LIMIT}</Text>
+      <View style={{backgroundColor: 'white'}}>
+        <View style={styles.mainContainer}>
+          <View style={styles.innerContainer}>
+            <Image
+              source={require('../../assets/Logo/Logo.png')}
+              style={styles.imageContainer}
+            />
+            <Text style={styles.title}>{AppConstant.SPENDING_LIMIT}</Text>
+          </View>
+          <ScrollView
+            contentContainerStyle={{flex: 1}}
+            style={{height: '100%', marginTop: -100, paddingTop: 100}}
+            allowBounceVertical={true}>
+            <SpendingLimitComponent
+              onSavePress={amount => this.onSaveClicked(amount)}
+              limitAmount={balanceLimitValue}
+            />
+          </ScrollView>
         </View>
-        <ScrollView
-          // scrollEventThrottle={16}
-          // stickyHeaderIndices={[0]}
-          contentContainerStyle={{flex: 1,}}
-          style={{height: '100%', marginTop: -100, paddingTop: 100,}}
-          allowBounceVertical={true}>
-          <SpendingLimitComponent
-            onSavePress={amount => this.onSaveClicked(amount)}
-            limitAmount={balanceLimitValue}
-          />
-        </ScrollView>
       </View>
     );
   }
