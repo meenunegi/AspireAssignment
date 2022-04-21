@@ -23,8 +23,7 @@
 ## Steps to Run the Project 
 
 1. Clone this project  `git clone < project-url.git >`
-2. `rm -rf node_modules/ package-lock.json`
-3. `npm install`
+2. `npm install`
 
 ## iOS steps
 
