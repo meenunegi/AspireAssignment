@@ -4,7 +4,8 @@ export const swipeableStyle = {
     backgroundColor: 'white',
     borderRadius: 30,
     marginTop: 100,
-    height: '100%'
+    height: '100%',
+    paddingBottom: 20
   },
   debitText: {
     fontSize: 13,
@@ -17,9 +18,10 @@ export const swipeableStyle = {
   heading: {
     fontSize: 14,
     marginBottom: 5,
+    color:'#25345F'
   },
   greyText: {
-    fontSize: 14,
+    fontSize: 13,
     color: '#22222233',
   },
   rowContent: {
@@ -34,4 +36,8 @@ export const swipeableStyle = {
     width: '100%',
     marginBottom: 30,
   },
+  debitCardLimitText: {
+    color:'#222222', 
+    fontSize: 13,
+  }
 };

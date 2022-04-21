@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Image, StyleSheet, Text, View, Switch} from 'react-native';
+import {Image, StyleSheet, Text, View, Switch, Platform} from 'react-native';
 import {ProgressBar} from 'react-native-paper';
 import {useNavigation} from '@react-navigation/native';
 
@@ -14,10 +14,10 @@ const SwipeableComponent = props => {
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
   return (
     <View style={styles.swipeContainer}>
-      <DebitCardComponent />
+      <DebitCardComponent cardDetails={props.cardDetails} />
       <View style={{top: '-8%'}}>
         <View style={styles.rowContent}>
-          <Text>{AppConstant.DEBIT_CARD_LIMIT}</Text>
+          <Text style={styles.debitCardLimitText}>{AppConstant.DEBIT_CARD_LIMIT}</Text>
           <View style={{flexDirection: 'row'}}>
             <Text style={{color: '#01D167'}}>$345</Text>
             <Text style={{color: '#22222233', marginHorizontal: 10}}>|</Text>
@@ -47,18 +47,23 @@ const SwipeableComponent = props => {
             </Text>
           </View>
           <Switch
-            trackColor={{false: '#01D167', true: '#01D167'}}
+            trackColor={{false: '#f4f3f4', true: '#01D167'}}
             thumbColor={isEnabled ? '#f4f3f4' : '#f4f3f4'}
             onValueChange={() => {
               toggleSwitch();
               navigate('SpendingLimit');
             }}
             value={isEnabled}
-            style={{transform: [{scaleX: 0.6}, {scaleY: 0.6}]}}
+            style={{
+              transform:
+                Platform.OS === 'ios'
+                  ? [{scaleX: 0.6}, {scaleY: 0.6}]
+                  : [{scaleX: 0.8}, {scaleY: 0.8}],
+            }}
           />
         </View>
         <View style={styles.rowContainer}>
-          <Image source={require('../../assets/Transfer/Transfer.png')} />
+          <Image source={require('../../assets/FreezeCard/FreezeCard.png')} />
           <View style={{paddingLeft: 10}}>
             <Text style={styles.heading}>{AppConstant.FREEZE_CARD}</Text>
             <Text style={styles.greyText}>
@@ -84,25 +89,6 @@ const SwipeableComponent = props => {
             </Text>
           </View>
         </View>
-        <View style={styles.rowContainer}>
-          <Image source={require('../../assets/deactivate/deactivate.png')} />
-          <View style={{paddingLeft: 10}}>
-            <Text style={styles.heading}>{AppConstant.DEACTIVATED_CARD}</Text>
-            <Text style={styles.greyText}>
-              {AppConstant.PREVIUOS_DEACTIVATED_CARD}
-            </Text>
-          </View>
-        </View>
-        <View style={styles.rowContainer}>
-          <Image source={require('../../assets/deactivate/deactivate.png')} />
-          <View style={{paddingLeft: 10}}>
-            <Text style={styles.heading}>{AppConstant.DEACTIVATED_CARD}</Text>
-            <Text style={styles.greyText}>
-              {AppConstant.PREVIUOS_DEACTIVATED_CARD}
-            </Text>
-          </View>
-        </View>
-        
       </View>
     </View>
   );

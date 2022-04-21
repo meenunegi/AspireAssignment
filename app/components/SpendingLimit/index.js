@@ -18,7 +18,7 @@ const SpendingLimitComponent = props => {
     <View style={styles.container}>
       <View style={styles.rowContainer}>
         <Image source={require('../../assets/Group/Group.png')} />
-        <Text style={{fontSize: 14, marginLeft: 15}}>
+        <Text style={styles.setWeekelyText}>
           {AppConstant.SET_WEEKELY_DEBIT_LIMIT}
         </Text>
       </View>

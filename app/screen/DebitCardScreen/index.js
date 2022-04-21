@@ -36,13 +36,10 @@ export default class DebitScreen extends Component {
   }
 
   render() {
-    const {availableBal} = this.state;
+    const {availableBal,cardDetails} = this.state;
     return (
       <View style={styles.mainContainer}>
-        <View
-          style={{ paddingHorizontal: 24,}}
-          // style={styles.imageContainer}
-          >
+        <View style={styles.innerContainer}>
           <Image
             source={require('../../assets/Logo/Logo.png')}
             style={styles.imageContainer}
@@ -57,11 +54,12 @@ export default class DebitScreen extends Component {
           </View>
         </View>
         <ScrollView
-          // scrollEventThrottle={16}
+          scrollEventThrottle={16}
           // stickyHeaderIndices={[0]}
+          contentContainerStyle={{paddingBottom: 100}}
           style={{height: '100%', marginTop: -100, paddingTop: 100}}
           allowBounceVertical={true}>
-          <SwipeableComponent />
+          <SwipeableComponent cardDetails={cardDetails}/>
         </ScrollView>
       </View>
     );

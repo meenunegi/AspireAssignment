@@ -19,13 +19,12 @@ export default AppConstants = {
   HERE_WEEKELY_MEANS:
     'Here weekly means the last 7 days - not the calendar week',
   SAVE: 'Save',
-  ASPIRE: 'aspire',
   NAME: 'Mark Henry',
-  VISA: 'VISA',
   SHOW_CARD_NUMBER: 'Show card number',
   HIDE_CARD_NUMBER: 'Hide card number',
   CARD_NUMBER: '5647    3411    2413    2020',
   CARD_NUMBER_HIDE: '****    ****    ****    2020',
   CVV: 456,
   CVV_HIDE: '***',
+  EXPIRY_DATE: '12/23'
 };

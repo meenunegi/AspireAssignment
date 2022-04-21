@@ -17,7 +17,18 @@ const DebitCardComponent = props => {
   const cardNum = isShow
     ? AppConstant.CARD_NUMBER
     : AppConstant.CARD_NUMBER_HIDE;
-  const cvv = isShow ? AppConstant.CVV : AppConstant.CVV_HIDE;
+
+  let cardHolderName = AppConstant.NAME;
+  let cvv = AppConstant.CVV;
+  let expiryDate = AppConstant.EXPIRY_DATE;
+
+  if (props.cardDetails !== null) {
+    let {cardName, cardCvv, cardExpiryDate} = props.cardDetails;
+    cardHolderName = cardName;
+    cvv = cardCvv;
+    expiryDate = cardExpiryDate;
+  }
+  cvv = isShow ? cvv : AppConstant.CVV_HIDE;
   return (
     <View>
       <TouchableOpacity
@@ -27,24 +38,16 @@ const DebitCardComponent = props => {
         <Text style={styles.showCardText}>{showText}</Text>
       </TouchableOpacity>
       <View style={styles.card}>
-        <View
-          style={{
-            flexDirection: 'row',
-            justifyContent: 'flex-end',
-            alignItems: 'center',
-          }}>
-          <Image source={require('../../assets/aspire/aspire.png')} />
-          <Text style={styles.aspireText}>{AppConstant.ASPIRE}</Text>
-        </View>
-        <Text style={styles.name}>{AppConstant.NAME}</Text>
+        <Image source={require('../../assets/AspireLogo/AspireLogo.png')} style={styles.aspireLogo}/>
+        <Text style={styles.name}>{cardHolderName}</Text>
         <Text style={[styles.aspireText, {letterSpacing: 2}]}>{cardNum}</Text>
         <View style={styles.cardCvvContainer}>
-          <Text style={styles.aspireText}>Thru: 12/20</Text>
-          <Text style={[styles.aspireText, {marginLeft: 30,letterSpacing: 1}]}>CVV: {cvv}</Text>
+          <Text style={styles.aspireText}>Thru: {expiryDate}</Text>
+          <Text style={[styles.aspireText, {marginLeft: 30, letterSpacing: 1}]}>
+            CVV: {cvv}
+          </Text>
         </View>
-        <Text style={[styles.name, {alignSelf: 'flex-end'}]}>
-          {AppConstant.VISA}
-        </Text>
+        <Image source={require('../../assets/VisaLogo/VisaLogo.png')} style={styles.visaLogo}/>
       </View>
     </View>
   );

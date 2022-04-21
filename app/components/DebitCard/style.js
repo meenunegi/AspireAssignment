@@ -16,7 +16,7 @@ export const debitCardStyle = {
     color: 'white',
     fontFamily: "AvenirNextLTPro-Bold",
     marginBottom: 24,
-    marginTop: 20
+    marginTop: 30
   },
   cardCvvContainer: {
     flexDirection: 'row',
@@ -42,5 +42,15 @@ export const debitCardStyle = {
     color: '#01D167',
     marginLeft: 8,
     paddingBottom: 10
+  },
+  aspireLogo: {
+    position:'absolute', 
+    right: 24, 
+    top: 24
+  },
+  visaLogo: {
+    position:'absolute', 
+    right: 24,
+    bottom: 24
   }
 };

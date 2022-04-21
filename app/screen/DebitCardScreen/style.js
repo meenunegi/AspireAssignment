@@ -4,7 +4,7 @@ export const debitStyle = {
   },
   innerContainer: {
     paddingHorizontal: 24,
-    paddingVertical: 32,
+    paddingTop: 20,
   },
   imageContainer: {
     alignSelf: 'flex-end',
