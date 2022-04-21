@@ -17,25 +17,24 @@
 
    This application is build using [React Native Framework](https://reactnative.dev) and works on both Android and IOS devices. React Native is an open-source JavaScript framework, designed for building apps on multiple platforms like iOS, Android, and also web applications, utilizing the very same code base. This project was build using Visual Studio Code IDE
    
-   [Redux]
-   Redux is a predictable state container for JavaScript apps. It holds and updates the entire state of the app in the simplest manner possible while also using the least amount of boilerplate code.
+   [Redux](https://redux.js.org/) is a predictable state container for JavaScript apps. It holds and updates the entire state of the app in the simplest manner possible while also using the least amount of boilerplate code.
    
-   [ReactNavigation]
-   React Navigation's native stack navigator provides a way for your app to transition between screens and manage navigation history.
+   [ReactNavigation](https://reactnavigation.org/) native stack navigator provides a way for your app to transition between screens and manage navigation history.
 ## Steps to Run the Project 
 
-1. Clone this project
-      git clone < project-url.git >
-2. rm -rf node_modules/ package-lock.json
-3. npm install
+1. Clone this project  `git clone < project-url.git >`
+2. `rm -rf node_modules/ package-lock.json`
+3. `npm install`
 
 ## iOS steps
 
-1. cd ios && pod install
-2. npx react-native run-ios
+1. `cd ios` && `pod install`
+2. `npx react-native run-ios`
 
 ## Android steps
 
-1. cd android && ./gradlew clean
-2. npx react-native run-android
-[NOTE] Please add local.properties file in android including sdk path.
+1. `cd android` && `./gradlew clean`
+2. `npx react-native run-android`
+
+
+ ***Please add local.properties file in android including sdk path.***
